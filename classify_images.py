@@ -65,4 +65,25 @@ def classify_images(images_dir, results_dic, model):
      Returns:
            None - results_dic is mutable data type so no return needed.         
     """
-    None 
+    # Iterate through the results dictionary and classify each pet image
+    for file_name in results_dic:
+        # Get the full path to the image file
+        image_path = images_dir + file_name
+        # Use the classifier function to get the classifier label for the pet image
+        classifier_label = classifier(image_path, model).lower().strip()
+        # Get the pet label from the results dictionary
+        pet_label = results_dic[file_name][0]
+        # Compare the pet label and classifier label, set match status
+        match = 1 if pet_label in classifier_label else 0
+        # Add classifier label and match status to the results dictionary
+        results_dic[file_name].extend([classifier_label, match])
+        
+        # Check for mismatch between pet and classifier labels and log a warning
+        if match == 0:
+            print(f"** Warning: Pet label and classifier label mismatch for {file_name}:")
+            print(f"    Pet label: {pet_label}")
+            print(f"    Classifier label: {classifier_label}")
+    
+    # Print acknowledgment info
+    num_items_classified = len(results_dic)
+    print(f"Number of items classified: {num_items_classified}") 
