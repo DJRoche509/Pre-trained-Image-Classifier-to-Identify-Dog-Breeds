@@ -40,6 +40,20 @@ def get_pet_labels(image_dir):
       List. The list contains for following item:
          index 0 = pet image label (string)
     """
-    # Replace None with the results_dic dictionary that you created with this
-    # function
-    return None
+    # List file items in directory with pet images  AND  Skips file if starts with .
+    file_names = [file for file in listdir(image_dir) if not file.startswith('.')]
+    
+    # Extract pet image labels using list comprehension
+    pet_label = [file.split('_')[0].lower() for file in file_names]
+    
+    # Create results dictionary using dictionary comprehension
+    results_dic = { file_names[i] : [pet_label[i]] 
+                   if file_names[i] not in results_dic
+                   else print("\n** WARNING!!!  Type --> Duplicate \nkey =" , file_names[i],  'already exists in results_dic with value =', results_dic[file_names[i]])
+                   for i in range(len(file_names)) }
+    
+    # Print aknowledgment info
+    num_items_added = len(results_dic)
+    print(f"Number of items added to dictionary: {num_items_added}")
+    
+    return results_dic
