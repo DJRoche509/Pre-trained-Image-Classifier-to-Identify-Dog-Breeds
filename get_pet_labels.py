@@ -18,6 +18,7 @@
 ##
 # Imports python modules
 from os import listdir
+import re
 
 # TODO 2: Define get_pet_labels function below please be certain to replace None
 #       in the return statement with results_dic dictionary that you create 
@@ -44,7 +45,7 @@ def get_pet_labels(image_dir):
     file_names = [file for file in listdir(image_dir) if not file.startswith('.')]
     
     # Extract pet image labels using list comprehension
-    pet_label = [file.split('_')[0].lower() for file in file_names]
+    pet_label = [' '.join(re.findall(r"[a-zA-Z]+", file.split('.')[0])).lower().strip() for file in file_names]
     
     # Create results dictionary using dictionary comprehension
     results_dic = { file_names[i] : [pet_label[i]] 
