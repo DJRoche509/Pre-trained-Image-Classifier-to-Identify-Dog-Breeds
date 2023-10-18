@@ -68,6 +68,41 @@ def calculates_results_stats(results_dic):
                      and the previous topic Calculating Results in the class for details
                      on how to calculate the counts and statistics.
     """        
-    # Replace None with the results_stats_dic dictionary that you created with 
-    # this function 
-    return None
+    
+    # Calculates various statistics using list comprehension
+    num_images = len(results_dic)
+    num_dogs_img = sum( results_dic[key][3] for key in results_dic if results_dic[key][3] == 1 )
+    num_notdogs_img = num_images - num_dogs_img
+    num_matches = sum( results_dic[key][2] for key in results_dic if results_dic[key][2] == 1 )
+    num_correct_dogs =  sum( results_dic[key][3] and results_dic[key][4] for key in results_dic )
+    num_correct_notdogs =  sum( not results_dic[key][3] and not results_dic[key][4] for key in results_dic )
+    num_correct_breed =  sum( results_dic[key][2] == 1 and results_dic[key][3] and results_dic[key][4] for key in results_dic )
+
+
+    # Calculate percentages using dictionary comprehension
+    pct_match = (num_matches / num_images) * 100 if num_images > 0 else 0
+    pct_correct_dogs = (num_correct_dogs / num_dogs_img)  * 100 if num_dogs_img > 0 else 0
+    pct_correct_notdogs = (num_correct_notdogs / num_dogs_img)  * 100 if num_notdogs_img > 0 else 0
+    pct_correct_breed = (num_correct_breed / num_dogs_img)  * 100 if num_dogs_img > 0 else 0
+
+    # Create and return results_stats_dic dictionary
+    results_stats_dic = {
+        'n_images': num_images,
+        'n_dogs_img': num_dogs_img,
+        'n_notdogs_img': num_notdogs_img,
+        'n_match': num_matches,
+        'n_correct_dogs': num_correct_dogs,
+        'n_correct_notdogs': num_correct_notdogs,
+        'n_correct_breed': num_correct_breed,
+        'pct_match': pct_match,
+        'pct_correct_dogs': pct_correct_dogs,
+        'pct_correct_notdogs': pct_correct_notdogs,
+        'pct_correct_breed': pct_correct_breed
+    }
+
+    # Print acknowledgment info
+    print("Results Statistics:")
+    for key, value in results_stats_dic.items():
+        print(f"{key}: {value}")
+    
+    return results_stats_dic
