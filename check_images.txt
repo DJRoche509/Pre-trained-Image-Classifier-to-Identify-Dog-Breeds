@@ -18,3 +18,30 @@ Answer:
 4. Based upon your answers for questions 1. - 3. above, select the model architecture that you feel did the best at classifying the four uploaded images. Describe why you selected that model architecture as the best on uploaded image classification.
 
 Answer:
+
+
+
+
+
+
+Results Table
+`````````````
+
+      +-------------------+---------+
+      |   # Total Images  |    4    |
+      +-------------------+---------+
+      |   #   Dog Images  |    2    |
+      +-------------------+---------+
+      |# Not-a-Dog Images |    2    |
+      +-------------------+---------+
+ 
+      +------------------------+---------------------+---------------------+---------------------+---------------------+
+      |CNN Model Architecture: | % Not-a-Dog Correct |     % Dogs Correct  |   % Breeds Correct  |    % Match Labels   |
+      +------------------------+---------------------+---------------------+---------------------+---------------------+              
+      |         	  RestNet  |        100%         |        100%         |          0%         |         25%         |
+      +------------------------+---------------------+---------------------+---------------------+---------------------+
+      |         	  AlexNet  |        100%         |        100%         |          0%         |          0%         |
+      +------------------------+---------------------+---------------------+---------------------+---------------------+
+ 	  |         	      VGG  |        100%         |        100%         |          0%         |         25%         |
+      +------------------------+---------------------+---------------------+---------------------+---------------------+
+                                                -- Project Uploaded Images Results --
