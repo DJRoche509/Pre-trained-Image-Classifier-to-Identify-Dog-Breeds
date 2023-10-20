@@ -34,7 +34,19 @@ sh run_models_batch_uploaded.sh
   - **resnet_uploaded-images.txt** - that contains the results using CNN model architecture ResNet
   - **alexnet_uploaded-images.txt** - that contains the results using CNN model architecture AlexNet
   - **vgg_uploaded-images.txt** - that contains the results using CNN model architecture VGG
-<br><br>
+    
+  <br/>
+  Here is an excerpt from <strong><em>alexnet_uploaded-images.txt</em></strong> after running the shell command shown above. <br/>
+
+  ![image](https://github.com/DJRoche509/Pre-trained-Image-Classifier-to-Identify-Dog-Breeds/assets/100164051/6a3364b4-5ee6-4ce8-adbe-e765fa7ab5dc)
+
+
+  <br>
+
+  Running the main class file, <strong><em>check_images.py</em></strong>, in cmd as `python3 check_images.py` should result similarly to the image below: <br/>
+  
+  ![image](https://github.com/DJRoche509/Pre-trained-Image-Classifier-to-Identify-Dog-Breeds/assets/100164051/17dad239-c43f-4604-9a7a-9a901a9b8afe)
+
 
 ## CNN Architectures
 ### AlexNet
@@ -49,3 +61,6 @@ ResNet (Residual Neural Network) is a CNN architecture designed to handle the va
 
 ## Contributing
 Feel free to contribute to this project by opening issues for bugs or feature requests. Pull requests are also welcome.
+
+<br/> <br/>
+![image](https://github.com/DJRoche509/Pre-trained-Image-Classifier-to-Identify-Dog-Breeds/assets/100164051/3fb67e35-4e43-46f4-be6e-81f86931f6bb)
