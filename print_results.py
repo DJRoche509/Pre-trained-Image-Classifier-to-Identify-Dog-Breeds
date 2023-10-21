@@ -77,14 +77,14 @@ def print_results(results_dic, results_stats_dic, model,
         print("\nIncorrectly Classified Dogs:")
         for key, value in results_dic.items():
             if sum(value[3:]) == 1:     #sum(value[3:]) < 3:  ???
-                print(f"Real: {value[0]}, Classifier: {value[1]}")
+                print(f"Actual: {value[0]}, Classifier: {value[1]}")
     
     # Print incorrectly classified dog breeds if requested
     if print_incorrect_breed and results_stats_dic['n_correct_dogs'] != results_stats_dic['n_correct_breed']:
         print("\nIncorrectly Classified Dog Breeds:")
         for key, value in results_dic.items():
             if sum(value[3:]) == 2 and value[0] not in value[1]:
-                print(f"Real: {value[0]}, Classifier: {value[1]}")
+                print(f"Actual: {value[0]}, Classifier: {value[1]}")
 
     # Print acknowledgment info
     print("\n** End of Summary **")  
