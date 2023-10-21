@@ -17,7 +17,7 @@ Answer: Yes, the three model architectures classified correctly classify Rabbit_
 
 4. Based upon your answers for questions 1. - 3. above, select the model architecture that you feel did the best at classifying the four uploaded images. Describe why you selected that model architecture as the best on uploaded image classification.
 
-Answer: I feel there is tie in my answer's choice because two of the yield with identical results in terms of matching and classifying the images. Looking at last table below for the Uploaded Images Project results, it shows commonnality (same values) within two different rows in the statistics calculations. My choice of answer wuld be both, the VGG and RestNet models. 
+Answer: I feel there is tie in my answer's choice because two of the architectures/models yield with identical results in terms of matching and classifying the current four uploaded images. Looking at last table below for the Uploaded Images Project results, it shows commonnality (same values) within two different rows in the statistics calculations. My choice of answer wuld be both, the VGG and RestNet models. 
 
 
 
